@@ -14,6 +14,8 @@ using namespace std;
 int getindexnu();
 
 void getarraynu(int b[], int &indexnu);
+
+void bubblesort(int b[], int indexnu);
 //--------------------------
 //micro
 //---------------------
@@ -35,6 +37,12 @@ int main(int argc, char** argv)
 
     //Get number of array
     getarraynu(a,n);
+
+        //Seperatpr
+    cout<<endl<<endl<<"------------------------------"<<endl<<endl;
+
+    //sort bubble and show array
+    bubblesort(a,n);
 
 getch();
 }
@@ -65,4 +73,33 @@ for(int i=0; i<indexnu; ++i)
     cout<<endl;
 }
 
+}
+
+//Function for sert with bubble sort and show array
+
+void bubblesort(int b[], int indexnu)
+{
+
+    for(int j=0; j<indexnu; ++j)
+    {
+
+    for (int i=0; i<indexnu; ++i)
+    {
+
+        int temp=0;
+        if(b[i] > b[i+1])
+        {
+
+            temp = b[i + 1];
+            b[i + 1] = b[i];
+            b[i] = temp;
+
+        }
+    }
+    }
+
+    for(int k=0; k<indexnu; ++k)
+    {
+        cout<<"["<<k<<"] = "<<b[k]<<endl;
+    }
 }
